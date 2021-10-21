@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact list</title>
+    <script src="https://kit.fontawesome.com/fdfd6c296d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,9 +17,10 @@
         <% for(let i = 0; i < myContacts.length; i++) { %>
             <form action="/delete" method="POST">
                 <div class="item">
-                    <input type="checkbox" value="<%= myContacts[i].phone%>" name="checkbox" onchange="this.form.submit()" >
                     <p><%= myContacts[i].name %></p>
                     <p><%= myContacts[i].phone %></p>
+                    <button type="submit" style="margin-inline-start: auto;" value="<%= myContacts[i].phone%>"  name="checkbox" ><i class="fas fa-minus"></i></button>
+                    
                 </div>
             </form>
             
@@ -30,7 +32,7 @@
             <input type="text" name="newName" placeholder="Contact name">
             <input type="text" name="newPhoneNumber" placeholder="Contact phone number">
             <br>
-            <button type="submit">+</button>
+            <button type="submit"><i class="fas fa-plus"></i></button>
         </form>
     </div>
     
